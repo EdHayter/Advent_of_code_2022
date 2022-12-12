@@ -6,6 +6,7 @@ for i = 4:length(data)
         markers(end+1)=i;
     end
 end
+min(markers)
 
 %% pt2 
 markers =[];
@@ -15,3 +16,4 @@ for i = 14:length(data)
         markers(end+1)=i;
     end
 end
+markers

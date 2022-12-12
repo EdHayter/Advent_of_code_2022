@@ -9,7 +9,7 @@ cycle = cumsum((string(data.Var1) == 'addx') + 1);
 strength = [];
 for i = 20:40:220
     t = i-cycle;
-    X(t == min(t(t>0)))
+    X(t == min(t(t>0)));
     strength(end+1) = i * X(t == min(t(t>0)));
 end
 
