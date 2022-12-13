@@ -17,7 +17,6 @@ for i = 1:length(data)
     idx(i) = contains(data{i},'$');
 end
 f = find(idx);
-
 for i = 1:length(f)-1
     t = data(f(i)+1:f(i+1)-1);
     clear t_num

@@ -49,7 +49,7 @@ end
 data=char(A);
 data = double(data);
 data = padarray(data,[1,1],0); %pad to avoid 0 referencing
-[row,col] = ind2sub(size(data),find(data==69)); %start
+[row,col] = ind2sub(size(data),find(data==69)); %start - step down from top
 visited = [row,col];
 data(visited(1),visited(2)) = 122 ; %assign heights to S/E
 distances = 0;
@@ -80,7 +80,7 @@ while ~found
     visited = cat(1,visited,possible_nodes);
     distances = cat(1,distances,repmat(ctr,[size(possible_nodes,1),1]));
   
-    if any(data(sub2ind(size(data),visited(:,1),visited(:,2)))==97)
+    if any(data(sub2ind(size(data),visited(:,1),visited(:,2)))==97) % when first a is found, stop
         found = 1;
         ctr
     end
