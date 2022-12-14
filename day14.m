@@ -9,7 +9,7 @@ area = zeros(200,1000);
 
 for r = 1:size(data,1)
     for c = 1:2:size(data,2)-2
-        x = data(r,[c+1 c+3]);
+        x = data(r,[c+1 c+3])+1;
         y = data(r,[c c+2]);
         if ~isnan(x(1))
             area(min(x):max(x),min(y):max(y)) = 1;
@@ -47,7 +47,6 @@ sand_counter
 %% pt 2
 area=areat;
 area(max(find(sum(area,2)))+2,:)=1;
-area = [zeros(1,1000);area];
 
 sand_counter = 0;
 
